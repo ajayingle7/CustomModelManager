@@ -11,6 +11,9 @@ class CustomManager(Manager):
     def get_esal_above_1000(self,esal):
         return super().get_queryset().filter(esal__gt=1000)
 
+    def get_ename_exclude(self,ename):
+        return super().get_queryset().exclude(ename="Ajay")
+
 
 
 class Employee(models.Model):
