@@ -22,7 +22,7 @@ def employeeView(request):
 
 def employeedataView(request):
     template_name = "app1/data.html"
-    obj = Employee.objects.get_esal_above_1000(1000)
+    obj = Employee.objects.get_ename_exclude("Ajay")
     context = {"data":obj}
 
     return render(request,template_name,context)
